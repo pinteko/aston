@@ -14,8 +14,6 @@ public interface CustomArrayList<E> extends Iterable<E> {
     E remove(int index);
     boolean remove(Object o);
     void sort(Comparator<? super E> c);
-
     int size();
-
     boolean contains(Object o);
 }
