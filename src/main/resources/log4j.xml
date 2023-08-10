@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Define loggers -->
+    <Loggers>
+        <Logger name="org.hibernate" level="info"/> <!-- Уровень логирования для Hibernate -->
+        <Logger name="org.hibernate.cache" level="info"/> <!-- Уровень логирования для кэша -->
+    </Loggers>
+
+    <!-- Appenders (output targets) -->
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </Console>
+    </Appenders>
+
+    <!-- Set the root logger level and its appenders -->
+    <Root level="info">
+        <AppenderRef ref="console"/>
+    </Root>
+
+</configuration>

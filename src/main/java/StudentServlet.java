@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.Serial;
 import java.util.List;
 
-@WebServlet(name = "StudentServlet", urlPatterns = "/students")
+//@WebServlet(name = "StudentServlet", urlPatterns = "/students")
 public class StudentServlet  extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
