@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.Serial;
 import java.util.List;
 
-@WebServlet(name = "GroupServlet", urlPatterns = "/groups")
+//@WebServlet(name = "GroupServlet", urlPatterns = "/groups")
 public class GroupServlet  extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
