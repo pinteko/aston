@@ -1,10 +1,13 @@
 package org.trainee.hw_hibernate.repositories;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import org.trainee.hw_hibernate.entities.Student;
 
 import java.util.List;
 
-public interface StudentRepository {
+@Repository
+public interface StudentRepository  extends JpaRepository<Student, Long> {
 
     Student getStudentById(Long id);
 

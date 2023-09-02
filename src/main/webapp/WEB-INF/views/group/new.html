@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New group</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/groups}" th:object="${group}">
+    <label for="title">Enter title: </label>
+    <input type="text" th:field="*{title}" id="title">
+    <div style="color: red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title error</div>
+    <br/>
+    <label for="teacher">Enter teacher id: </label>
+    <input type="text" th:field="*{teacher}" id="teacher">
+    <div style="color: red" th:if="${#fields.hasErrors('teacher')}" th:errors="*{teacher}">Teacher error</div>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

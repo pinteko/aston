@@ -1,18 +1,17 @@
 package org.trainee.hw_hibernate.services;
 
-import org.hibernate.SessionFactory;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import org.trainee.hw_hibernate.entities.Group;
+import org.trainee.hw_hibernate.entities.Teacher;
 import org.trainee.hw_hibernate.repositories.GroupRepository;
-import org.trainee.hw_hibernate.repositories.GroupRepositoryImpl;
 
 import java.util.List;
 
+@Service
+@RequiredArgsConstructor
 public class GroupService {
     private final GroupRepository groupRepository;
-
-    public GroupService(SessionFactory sessionFactory) {
-        groupRepository = new GroupRepositoryImpl(sessionFactory);
-    }
 
     public Group getGroupById(Long id) {
         return groupRepository.getGroupById(id);
@@ -32,5 +31,9 @@ public class GroupService {
 
     public void deleteGroup(Long id) {
         groupRepository.deleteGroup(id);
+    }
+
+    public void updateGroup(Long id, Group group) {
+        groupRepository.updateGroup(id, group);
     }
 }

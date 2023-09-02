@@ -1,8 +1,7 @@
-import org.trainee.hw_jdbc.dao.DataAccessObject;
+import org.trainee.hw_jdbc.dao.DataAccessObjectImpl;
 import org.trainee.hw_jdbc.entities.Student;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,11 +13,11 @@ import java.util.List;
 public class StudentServlet  extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
-    private DataAccessObject dao;
+    private DataAccessObjectImpl dao;
 
     @Override
     public void init() throws ServletException {
-        dao = new DataAccessObject();
+        dao = new DataAccessObjectImpl();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -40,11 +39,11 @@ public class StudentServlet  extends HttpServlet {
         request.getRequestDispatcher("/students.jsp").forward(request, response);
     }
 
-    public DataAccessObject getDao() {
+    public DataAccessObjectImpl getDao() {
         return this.dao;
     }
 
-    public void setDao(DataAccessObject dao) {
+    public void setDao(DataAccessObjectImpl dao) {
         this.dao = dao;
     }
 }
