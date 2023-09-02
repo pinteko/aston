@@ -1,18 +1,16 @@
 package org.trainee.hw_hibernate.services;
 
-import org.hibernate.SessionFactory;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import org.trainee.hw_hibernate.entities.Teacher;
 import org.trainee.hw_hibernate.repositories.TeacherRepository;
-import org.trainee.hw_hibernate.repositories.TeacherRepositoryImpl;
 
 import java.util.List;
 
+@Service
+@RequiredArgsConstructor
 public class TeacherService {
     private final TeacherRepository teacherRepository;
-
-    public TeacherService(SessionFactory sessionFactory) {
-        teacherRepository = new TeacherRepositoryImpl(sessionFactory);
-    }
 
     public Teacher getTeacherById(Long id) {
         return teacherRepository.getTeacherById(id);
@@ -28,6 +26,10 @@ public class TeacherService {
 
     public void saveTeacher(Teacher teacher) {
         teacherRepository.saveTeacher(teacher);
+    }
+
+    public void updateTeacher(Long id, Teacher teacher) {
+        teacherRepository.updateTeacher(id, teacher);
     }
 
     public void deleteTeacher(Long id) {

@@ -1,18 +1,11 @@
 package org.trainee.hw_hibernate.repositories;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import org.trainee.hw_hibernate.entities.AbstractCorporation;
 
-import java.util.List;
+@Repository
+public interface CorporationRepository extends JpaRepository<AbstractCorporation, Long> {
 
-public interface CorporationRepository {
-
-    AbstractCorporation getCorporationById(Long id);
-
-    AbstractCorporation getCorporationByName(String name);
-
-    List<AbstractCorporation> getAllCorporations();
-
-    void saveCorporation(AbstractCorporation corporation);
-
-    void deleteCorporation(Long id);
+    AbstractCorporation getAbstractCorporationByName(String name);
 }

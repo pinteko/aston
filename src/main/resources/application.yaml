@@ -1,0 +1,30 @@
+server:
+    port: 8189
+    servlet:
+        context-path: /app
+spring:
+    datasource:
+      url: jdbc:postgresql://localhost:5432/postgres
+      username: postgres
+      password: berbedos31
+      driver-class-name: org.postgresql.Driver
+    jpa:
+      database: postgresql
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQL10Dialect
+          show-sql: true
+          format-sql: true
+          ddl-auto: update
+          cache:
+            use-second-level-cache: true
+            use-query-cache: true
+            provider: org.ehcache.jsr107.EhcacheCachingProvider
+            missing-cache-strategy: create
+            region:
+              factory-class: org.hibernate.cache.jcache.internal.JCacheRegionFactory
+
+
+#for .properties
+#server.port=8189
+#server.servlet.context-path=/app
